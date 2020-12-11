@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCompaniesTable extends Migration
 {
+    // Ceci pour l'entreprise qui publie l'offre
     /**
      * Run the migrations.
      *

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
-    
+
     protected $fillable =[
         'name',
         'location',
@@ -18,7 +18,7 @@ class Company extends Model
         'website'
     ];
 
-    // Company can have many jobs
+    // Company can have many jobs, we nedd to set the OnToMany revrese relationship
     public function jobs(){
         return $this->hasMany(Job::class);
     }

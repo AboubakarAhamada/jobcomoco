@@ -18,12 +18,12 @@ class Job extends Model
         'location'
     ];
 
-    // A job belon to one categoy, here we set the The OnToMany reverse relationship.
+    // A job belon to one categoy, here we set the The OnToMany relationship.
     public function categoy(){
         return $this->belongsTo(Category::class);
     }
 
-    // A job belong alse to one company
+    // A job belong alse to one , we set the OnToMany Relationship
 
     public function company(){
         return $this->belongsTo(Company::class);

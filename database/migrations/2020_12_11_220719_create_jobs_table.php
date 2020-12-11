@@ -12,11 +12,12 @@ class CreateJobsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
+        Schema::disableForeignKeyConstraints(); // On desactive le contrainte sur les clés étrangères
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("category_id");
-            $table->bigInteger("company_id");
+            $table->unsignedBigInteger("category_id");
+            $table->unsignedBigInteger("company_id");
             $table->string("title");
             $table->string("experience");
             $table->string("salary")->nullable();

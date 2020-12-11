@@ -11,7 +11,7 @@ class Category extends Model
 
     protected $fillable =['name','slug'];
 
-    // A categy has many jobs. We set the OnToMany Relationshiop
+    // A categy has many jobs. We set the OnToMany Relationship
     public function jobs(){
         return $this->hasMany(Job::class);
     }
