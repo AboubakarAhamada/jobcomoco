@@ -53,7 +53,7 @@
 				<div class="job-update">
 					<h4><b> <a href="{{'/voir_offre/'.$job->id}}">{{$job->title}}</a> </b></h4> <br>
 					<i class="fa fa-table"></i><span>Publié : le {{date("d/m/Y à h:i",strtotime($job->created_at))}}</span><br>
-					<i class="fa fa-building"></i><span>Entreprise : Exim-Bank</span><br>
+					<i class="fa fa-building"></i><span>Entreprise : {{$job->name}}</span><br>
 					<i class="fa fa-check-square"></i><span>Type de contrat : CDI</span><br>
 					<i class="fa fa-briefcase"></i><span>Expérience réquise : {{$job->experience}}</span><br>
 					<i class="fa fa-graduation-cap"></i><span>Niveau d'études demandé : Bac+5</span><br>
