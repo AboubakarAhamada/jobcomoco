@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/jobs', [MainController::class,'getAllJobs']);
-
+*/
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/',[MainController::class,'index']);
+
+Route::get('/voir_offre/{id}',[MainController::class,'apply']);

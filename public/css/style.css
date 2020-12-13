@@ -1,0 +1,216 @@
+
+*{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+.menu-bar{
+	background-image: linear-gradient(to right, #abc123, #123abc); /* linear-gradient(to left, #7df9ef, #fce08a);*/
+}
+.nav-link{
+	font-size: 16px;
+	color: #fff !important;
+	margin: 2px;
+}
+#logo{
+	border-radius: 50%;
+}
+.navbar-nav{
+	text-align: right;
+}
+.banner{
+	height: 80vh;
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../images/team-work.jpeg);
+	color: #fff;
+	background-position: center;
+	backgound-size:cover;
+}
+.banner h1{
+	padding-top: 170px;
+	font-size: 50px;
+	letter-spacing: 5px;
+	font-weight: 600;
+
+}
+.seach-job{
+	padding: 30px 0; 
+	margin: -50px 6px 50px;
+	background-color: rgb(48,86,128);
+
+}
+.seach-job .form-control{
+	max-width: 300px;
+	display: inline-flex;
+	margin: 10px 5px;
+	border:none;
+
+}
+/*----------------- TOP ENTREPRISES ---------------- */
+#top-recruters{
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+#top-recruters h3 {
+	text-align: center;
+	padding-bottom: 40px;
+
+}
+h3::before{
+	content: '';
+	background-image: linear-gradient(to right, #abc123, #123abc);
+	width:50px;
+	height: 30px;
+	position: absolute;
+	z-index: -1;
+	margin-top: -15px;
+	border-top-left-radius: 70px;
+	border-bottom-right-radius: 90px;
+}
+#top-recruters img{
+	max-width: 150px;
+	max-height: 100px;
+	margin: 10px 20px;
+}
+
+/*------------------- RECENTS JOBS ----------------- */
+#jobs{
+	background: #f8f8fa;
+	padding:50px 0;
+}
+.company-details{
+	box-shadow: 0 2px 70px 0 rgba(100,118,200,.54);
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.job-update{
+	background:#fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+
+}
+.job-update .fa{
+	margin-top: 5px;
+	margin-right: 5px;
+	color: #77d1b1;
+}
+
+.job-update small{
+	background:#efefef;
+	padding: 1px 5px;
+	margin: 0 5px;
+}
+
+.job-update p{
+	margin-bottom: 0 !important;
+}
+
+.job-update a{
+	text-decoration: none !important;
+	float: left;
+}
+.voir-btn, .postuler-btn{
+	height: 40px;
+	font-weight: bold;
+	background-image: linear-gradient(to left, #abc123, #123abc);
+	padding: 7px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+
+}
+.voir-btn .btn-primary{
+	padding: 0 30px;
+	float: right;
+	background: transparent;
+	border: 1px solid #fff;
+	border-radius: 50px;
+}
+.postuler-btn .btn-primary{
+	padding: 0 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	margin: 0 auto;
+	display: block;
+}
+
+/*---------------- PAGE LINK -------------------- */
+.page-link li{
+	height: 25px;
+	width: 25px;
+	list-style: none;
+	display: inline-block;
+	cursor: pointer;
+}
+.page-link li:hover, .active{
+	color: #fff;
+	background-image: linear-gradient(to left, #abc123, #123abc);
+}
+
+/*--------------------- SITE STATS -------------------*/
+
+#site-stats{
+	padding: 100px 0;
+}
+#site-stats h3{
+	margin-bottom: 30px;
+}
+.stats-box{
+	box-shadow: 0 2px 70px 0 rgba(100,118,200,.54);
+	padding: 30px;
+	margin: 20px 0;
+	border-radius: 10px;
+}
+.stats-box .fa{
+	font-size: 30px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+/*------------------ App banner --------------------*/
+
+#app-banner{
+	background-image: linear-gradient(to left, #abc123, #123abc);
+	padding: 50px 0;
+
+}
+#app-banner h1{
+	color: #fff;
+	margin-bottom: 20px;
+}
+#app-banner img{
+	max-width: 150px;
+	max-height: 100px;
+	margin-top: 30px;
+}
+
+/*---------------- footer ------------*/
+
+#footer{
+	background:#e9f8fd;
+	padding: 20px 10px 8px;
+}
+.footer-image{
+	margin: 30px 0;
+}
+#footer p{
+	color: #333;
+}
+#footer a img{
+	max-width: 50px;
+	max-height: 50px;
+	padding: 5px;
+	border-radius: 50px;
+}
+hr{
+	background-color: pink;
+}
+.fa-heart{
+	color: red;
+}
+
+/***************** Page voir_offre ***********/
+
+#voir_offre{
+	margin-top: 40px;
+}
+
