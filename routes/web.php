@@ -25,4 +25,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/',[MainController::class,'index']);
 
-Route::get('/voir_offre/{id}',[MainController::class,'apply']);
+Route::get('/voir_offre/{id}',[MainController::class,'findJob']);
+
+Route::get('/toutes-les-offres',[MainController::class, 'showJobs']);
+
+Route::get('/entreprises', [MainController::class,'showCompanies']);
