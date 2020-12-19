@@ -10,7 +10,8 @@
           <h4 class="modal-title">Envoyer ma candidature au recruteur</h4>
         </div>
         <div class="modal-body">
-            <form>
+            <form action="{{route('apply')}}" method="POST" enctype="multipart/form-data">
+              @csrf
                 <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" class="form-control" id="nom" required>

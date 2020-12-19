@@ -27,6 +27,10 @@ Route::get('/',[MainController::class,'index']);
 
 Route::get('/voir_offre/{id}',[MainController::class,'findJob']);
 
-Route::get('/toutes-les-offres',[MainController::class, 'showJobs']);
+Route::get('/toutes-les-offres-d-emplois',[MainController::class, 'showJobs']);
+
+Route::get('/toutes-les-offres-de-stages',[MainController::class, 'showInternships']);
 
 Route::get('/entreprises', [MainController::class,'showCompanies']);
+
+Route::post('/apply',[MainController::class,'apply'])->name('apply');

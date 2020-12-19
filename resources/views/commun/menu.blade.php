@@ -7,7 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/toutes-les-offres">EMPLOIS / STAGES<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/toutes-les-offres-d-emplois">EMPLOIS<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/toutes-les-offres-de-stages">STAGES<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/entreprises">SOCIETES</a>
