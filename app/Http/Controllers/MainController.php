@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Application;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use App\Models\Job;
@@ -33,10 +34,37 @@ class MainController extends Controller
         return view('voir_offre', compact('job'));
     }
 
-    /* 
-    Cette méthode recupère toutes les offres (emplois CDI et CDD) qui sont dans la BD
-    l'affichage doit se faire du plus récentes aux enciennes offres
-    */
+    /**
+     * findJobByKeyWords()
+     * 
+     *Cette fonction permet de chercher un emploi par un ou plusieurs mots clés 
+     * @return void
+     */
+    public function findJobByKeyWords(Request $request){
+        //$keywords = $request->all();
+        $keyword = $request->keyword;
+        $local = $request->local;
+       
+        $jobs = DB::table('jobs')
+                ->join('companies','companies.id','=','jobs.company_id')
+                ->join('categories','categories.id','=', 'jobs.category_id')
+                ->where('title','LIKE',"%$keyword%")
+                ->orWhere('description','LIKE',"%$keyword%")
+                ->where('jobs.location','LIKE',"%$local%")
+                ->select('jobs.*','companies.name as company','categories.name as type')
+                ->get();
+            
+        //dump($jobs);
+        return view('index',compact('jobs'));
+    }
+
+    /**
+     * showJobs()
+     * Cette méthode recupère toutes les offres (emplois CDI et CDD) qui sont dans la BD
+     * l'affichage doit se faire du plus récentes aux enciennes offres
+     *
+     * @return void
+     */
     public function showJobs(){
         
         $jobs = DB::table('jobs')
@@ -72,7 +100,30 @@ class MainController extends Controller
     }
 
     public function apply(Request $request){
+        
+        $request->validate([
+            'cv_path' => 'required|mimes:pdf,docs,doc|max:2048'
+        ]);
 
+        $application = new Application;
+        
+        if($request->hasFile('cv_path')) {
+            $fileName = time().'_'.$request->cv_path->getClientOriginalName();
+            $filePath = $request->file('cv_path')->storeAs('uploads', $fileName, 'public');
+
+            $application->cv_path = '/storage/' . $filePath;
+        }
+       
+        //$application->cv_path = $request->cv_path;
+        $application->firstName = $request->firstName;
+        $application->lastName = $request->lastName;
+        $application->email = $request->email;
+        $application->phone = $request->phone;
+        $application->job_id = $request->job_id;
+        
+        $application->save();
+        return back()
+            ->with('success','File has been uploaded.');
    
     }
 

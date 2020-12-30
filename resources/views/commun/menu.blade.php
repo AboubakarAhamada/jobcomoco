@@ -7,6 +7,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <a class="nav-link" href="/">ACCUEIL<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/toutes-les-offres-d-emplois">EMPLOIS<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
@@ -16,7 +19,7 @@
             <a class="nav-link" href="/entreprises">SOCIETES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/nouveautes"> NOUVEAUTES</a>
+            <a class="nav-link" href="/divers">DIVERS</a>
           </li>
         </ul>
       </div>

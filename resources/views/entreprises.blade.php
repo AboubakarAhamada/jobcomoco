@@ -11,7 +11,7 @@
             <div id="info_company">
                 {{$company->name}} <br> {{$company->location}} <br>
                 {{$company->email}} <br> {{$company->phone}} <br>
-                {{$company->logo}} <br> {{$company->website}} 
+                 {{$company->website}} 
             </div>
         
             @endforeach

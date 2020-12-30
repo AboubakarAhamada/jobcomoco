@@ -15,7 +15,7 @@
 					<i class="fa fa-building"></i><span>Entreprise : {{$job->company}}</span><br>
 					<i class="fa fa-check-square"></i><span>Type de contrat : {{$job->type}}</span><br>
 					<i class="fa fa-briefcase"></i><span>Expérience réquise : {{$job->experience}}</span><br>
-					<i class="fa fa-graduation-cap"></i><span>Niveau d'études demandé : Bac+5</span><br>
+					<!-- <i class="fa fa-graduation-cap"></i><span>Niveau d'études demandé : Bac+5</span><br> -->
 					<i class="fa fa-money"></i><span> Salaire : {{$job->salary}} </span><br>
 					<i class="fa fa-map-marker"></i><span> {{$job->location}}</span><br>
 					<!--

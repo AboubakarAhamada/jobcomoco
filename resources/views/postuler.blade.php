@@ -12,26 +12,29 @@
         <div class="modal-body">
             <form action="{{route('apply')}}" method="POST" enctype="multipart/form-data">
               @csrf
+
                 <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" class="form-control" id="nom" required>
+                    <label for="nom">Nom <span style="color:red">*</span> </label>
+                    <input type="text" name="firstName" class="form-control" id="nom" required>
                 </div>
                 <div class="form-group">
-                    <label for="nom">Prénom</label>
-                    <input type="text" name="prenom" class="form-control" id="prenom" required>
+                    <label for="nom">Prénom<span style="color:red">*</span> </label>
+                    <input type="text" name="lastName" class="form-control" id="prenom" required>
                 </div>
                 <div class="form-group">
-                    <label for="mail">Adresse mail</label>
-                    <input type="email" name="mail" class="form-control" id="mail" required>
+                    <label for="mail">Adresse mail <span style="color:red">*</span> </label>
+                    <input type="email" name="email" class="form-control" id="mail" required>
                 </div>
                 <div class="form-group">
-                  <label for="phone">Téléphone</label>
+                  <label for="phone">Téléphone <span style="color:red">*</span> </label>
                   <input type="tel" name="phone" class="form-control" id="phone" required>
                 </div>
                 <div class="form-group">
-                  <label for="cv">Votre CV</label>
-                  <input type="file"  name="cv" class="form-control" id="cv" required>
+                  <label for="cv">Votre CV (.pdf, docs) <span style="color:red">*</span> </label>
+                  <input type="file"  name="cv_path" class="form-control" id="cv_path" required>
                 </div>
+
+                <input type="hidden" name="job_id" value="{{$job->id}}" >
 
                 <button type="submit" class="btn btn-primary">Envoyer</button>
               </form>

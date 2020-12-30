@@ -13,10 +13,12 @@
 	</section>
 
 	<div class="seach-job text-center">
-		<input type="text" name="" class="form-control" placeholder="Recherchez par mots clés">
-		<input type="text" name="" class="form-control" placeholder="Entreprise">
-		<input type="text" name="" class="form-control" placeholder="Localité">
-		<input type="button" class="btn btn-success" value="Trouver un emploi">
+		<form action="{{route('search')}}" method="GET">
+		<input type="text" name="keyword" class="form-control" placeholder="Recherchez par mots clés">
+		<!--<input type="text" name="" class="form-control" placeholder="Entreprise"> -->
+		<input type="text" name="local" class="form-control" placeholder="Localité">
+		<button type="submit" class="btn btn-success">Trouver un emploi</button>
+		</form>
 	</div>
 
 	<!------------------------ TOP RECRUITERS ------------------->
@@ -56,7 +58,7 @@
 					<i class="fa fa-building"></i><span>Entreprise : {{$job->company}}</span><br>
 					<i class="fa fa-check-square"></i><span>Type de contrat : {{$job->type}}</span><br>
 					<i class="fa fa-briefcase"></i><span>Expérience réquise : {{$job->experience}}</span><br>
-					<i class="fa fa-graduation-cap"></i><span>Niveau d'études demandé : Bac+5</span><br>
+					<!--<i class="fa fa-graduation-cap"></i><span>Niveau d'études demandé : Bac+5</span><br> -->
 					<i class="fa fa-money"></i><span> Salaire : {{$job->salary}} </span><br>
 					<i class="fa fa-map-marker"></i><span> {{$job->location}}</span><br>
 					<!--

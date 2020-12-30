@@ -34,3 +34,5 @@ Route::get('/toutes-les-offres-de-stages',[MainController::class, 'showInternshi
 Route::get('/entreprises', [MainController::class,'showCompanies']);
 
 Route::post('/apply',[MainController::class,'apply'])->name('apply');
+
+Route::get('/search', [MainController::class,'findJobByKeywords'])->name('search');
