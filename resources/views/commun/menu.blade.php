@@ -16,10 +16,7 @@
             <a class="nav-link" href="/entreprises">SOCIETES</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ACTUALITES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">DIVERS</a>
+            <a class="nav-link" href="/nouveautes"> NOUVEAUTES</a>
           </li>
         </ul>
       </div>

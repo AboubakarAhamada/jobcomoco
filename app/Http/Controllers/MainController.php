@@ -75,5 +75,10 @@ class MainController extends Controller
 
    
     }
+
+    // Affiche tous les articles de la rubrique 'NOUVEAUTES'
+    public function showPosts(){
+        return view('postes.index');
+    }
     
 }

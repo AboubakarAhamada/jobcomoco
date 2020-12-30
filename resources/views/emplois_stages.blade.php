@@ -35,6 +35,8 @@
             
 			<!-- ------------------ Pagination ------------->
 
+			{{ $jobs->links()}}
+			<!--
 			<ul class="page-link text-center">
 				<li class="left-arrow">&#8592;</li>
 				<li class="active">1</li>
@@ -44,6 +46,7 @@
 				<li>5</li>
 				<li class="right-arrow">&#8594;</li>
 			</ul>
+			-->
 		</div>
 	</section>
     @include('commun.footer')
