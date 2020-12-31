@@ -13,7 +13,13 @@
     <title>Jobcomoco</title>
 </head>
 <body>
-    
+    @if(session()->has('success'))
+    <div class="alert alert-success d-flex justify-content-center" >
+        {{ session()->get('success') }} &nbsp; &nbsp;
+        <button type="button" class="close" data-dismiss="alert">×</button>
+    </div>
+    @endif
+
     @yield('content')
 
 </body>

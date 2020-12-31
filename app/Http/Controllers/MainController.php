@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
-    /*
-    Cette méthode doit plutot recuperer les 5 dernières offres (les plus récentes)
-    */
+    /**
+     *  Cette méthode doit plutot recuperer : 
+     * 1) les 5 dernières offres (les plus récentes)
+     * 2) le nombre d'emplois et companies enregistrés
+     * @return void
+     */
+    
     public function index(){
         
         $jobs = DB::table('jobs')
@@ -22,13 +26,20 @@ class MainController extends Controller
             ->orderBy('created_at', 'DESC')->limit(3)
             ->get();
         //dump($jobs);
+
+        $nbCompanies = Company::count();
+        $nbJobs = Job::count();
         
-        return view('index',compact('jobs'));
+        return view('index',compact('jobs','nbCompanies','nbJobs'));
     }
 
-    /*
-     Cette méthode recupère l'empoi en fonction de l'id
-    */
+    /**
+     * findJob
+     * Cette méthode recupère l'empoi en fonction de son id 
+     *
+     * @param [type] $id
+     * @return view with an model of Job
+     */
     public function findJob($id){
         $job = Job::find($id);
         return view('voir_offre', compact('job'));
@@ -78,10 +89,12 @@ class MainController extends Controller
         return view('emplois_stages', compact('jobs'));
     }
 
-     /* 
-    Cette méthode recupère toutes les offres de stages qui sont dans la BD
-    l'affichage doit se faire du plus récentes aux enciennes offres
-    */
+     /**
+      * showInternships
+      * Cette méthode recupère toutes les offres de stages qui sont dans la BD
+      * l'affichage doit se faire du plus récentes aux enciennes offres
+      * @return view
+      */
     public function showInternships(){
         
         $jobs = DB::table('jobs')
@@ -94,18 +107,34 @@ class MainController extends Controller
         return view('emplois_stages', compact('jobs'));
     }
 
+    /**
+     * showCompanies
+     * Cette methode liste toutes les entreprises enrégistre dans la base de données
+     *
+     * @return view
+     */
     public function showCompanies(){
         $companies = Company::all();
         return view('entreprises',compact('companies'));
     }
 
+    /**
+     * apply 
+     * La fonction apply gère la soumission d'un candidature à un emploi
+     * Stock le fichier (cv) uploadé dans le dossier store/uploads
+     * Et enregistre les infos du candidat dans la base de données
+     *
+     * @param Request $request
+     * @return void
+     */
     public function apply(Request $request){
         
-        $request->validate([
-            'cv_path' => 'required|mimes:pdf,docs,doc|max:2048'
-        ]);
+        $application = new Application;  // Not god at all. I must use Dependancy Injection
 
-        $application = new Application;
+        $request->validate([
+            'cv_path' => 'required|mimes:pdf,docs,doc|max:2048',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i'
+        ]);
         
         if($request->hasFile('cv_path')) {
             $fileName = time().'_'.$request->cv_path->getClientOriginalName();
@@ -123,11 +152,15 @@ class MainController extends Controller
         
         $application->save();
         return back()
-            ->with('success','File has been uploaded.');
+            ->with('success','Votre candidature a été bien envoyée au recruteur');
    
     }
 
-    // Affiche tous les articles de la rubrique 'NOUVEAUTES'
+    /**
+     * showPosts function
+     *Affiche tous les articles de la rubrique 'DIVERS'
+     * @return view
+     */
     public function showPosts(){
         return view('postes.index');
     }

@@ -105,13 +105,13 @@
 					<div class="row">
 						<div class="col-6">
 							<div class="stats-box">
-								<i class="fa fa-hand-peace-o"></i><span><small>10k +</small></span>
+								<i class="fa fa-hand-peace-o"></i><span><small>{{$nbJobs}} +</small></span>
 								<p>Offres d'emploi actifs</p>
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="stats-box">
-								<i class="fa fa-building-o"></i><span><small>10k +</small></span>
+								<i class="fa fa-building-o"></i><span><small>{{$nbCompanies}} +</small></span>
 								<p>Entreprises</p>
 							</div>
 						</div>
