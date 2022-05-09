@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\DB;
 class MainController extends Controller
 {
     /**
-     *  Cette méthode doit plutot recuperer : 
-     * 1) les 5 dernières offres (les plus récentes)
-     * 2) le nombre d'emplois et companies enregistrés
-     * @return void
+     * index function
+     * Cette méthode doit plutot recuperer  
+     * les 5 dernières offres (les plus récentes)
+     * @return view
      */
     
     public function index(){
@@ -26,11 +26,8 @@ class MainController extends Controller
             ->orderBy('created_at', 'DESC')->limit(3)
             ->get();
         //dump($jobs);
-
-        $nbCompanies = Company::count();
-        $nbJobs = Job::count();
         
-        return view('index',compact('jobs','nbCompanies','nbJobs'));
+        return view('index',compact('jobs'));
     }
 
     /**
@@ -38,7 +35,7 @@ class MainController extends Controller
      * Cette méthode recupère l'empoi en fonction de son id 
      *
      * @param [type] $id
-     * @return view with an model of Job
+     * @return view with a model of Job
      */
     public function findJob($id){
         $job = Job::find($id);
